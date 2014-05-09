@@ -24,6 +24,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
@@ -81,6 +82,13 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+
+" When editing a file, always jump to the last cursor position  
+autocmd BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+    \ exe "normal g`\"" | endif
+
+" Always open the quickfix with vimgrep
+autocmd QuickFixCmdPost vimgrep cw
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM user interface
@@ -271,7 +279,7 @@ autocmd FileType haml setlocal sw=2 sts=2 ts=2 et
 :nnoremap <leader>fr :Unite register<cr>
 :nnoremap <leader>fc :Unite bookmark<cr>
 :nnoremap <leader>fa :UniteBookmarkAdd<cr> 
-" :nnoremap <leader>fg :Unite grep<cr> 
+:nnoremap <leader>fg :Unite grep<cr> 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
