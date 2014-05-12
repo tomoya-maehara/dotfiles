@@ -106,9 +106,9 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
-set wildignore+=.git\*,.hg\*,.svn\*
+    set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
 " Always show line number
@@ -168,16 +168,16 @@ syntax enable
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-set guioptions-=T
-set guioptions-=e
-set t_Co=256
-set guitablabel=%M\ %t
+  set guioptions-=T
+  set guioptions-=e
+  set t_Co=256
+  set guitablabel=%M\ %t
 endif
 
 set background=dark
 
 try
-colorscheme Tomorrow-Night
+  colorscheme Tomorrow-Night
 catch
 endtry
 
@@ -237,6 +237,7 @@ nnoremap bn :bnext<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType ruby setlocal sw=2 sts=2 ts=2 et
 autocmd FileType haml setlocal sw=2 sts=2 ts=2 et
+autocmd FileType vim setlocal sw=2 sts=2 ts=2 et
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -303,7 +304,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
@@ -315,9 +316,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-return neocomplete#close_popup() . "\<CR>"
-" For no inserting <CR> key.
-"return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -362,11 +363,11 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
