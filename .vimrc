@@ -79,13 +79,17 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Remap Ctrl+C to Escape
+inoremap <C-c> <Esc>
+vnoremap <C-c> <Esc>
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
 " When editing a file, always jump to the last cursor position  
 autocmd BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
-    \ exe "normal g`\"" | endif
+\ exe "normal g`\"" | endif
 
 " Always open the quickfix with vimgrep
 autocmd QuickFixCmdPost vimgrep cw
@@ -102,9 +106,9 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
-    set wildignore+=.git\*,.hg\*,.svn\*
+set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
 " Always show line number
@@ -131,6 +135,9 @@ set smartcase
 
 " Highlight search results
 set hlsearch
+
+" Clear hightlight search results
+nnoremap <Esc><Esc> :nohlsearch<cr> 
 
 " Makes search act like search in modern browsers
 set incsearch
@@ -161,16 +168,16 @@ syntax enable
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
+set guioptions-=T
+set guioptions-=e
+set t_Co=256
+set guitablabel=%M\ %t
 endif
 
 set background=dark
 
 try
-    colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night
 catch
 endtry
 
@@ -212,12 +219,12 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command line 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:cnoremap <C-A> <Home>
-:cnoremap <C-F> <Right>
-:cnoremap <C-B> <Left>
-:cnoremap <Esc>b <S-Left>
-:cnoremap <Esc>f <S-Right>
-:cnoremap <C-h> <C-f>
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <C-h> <C-f>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nomarl mode 
@@ -234,52 +241,52 @@ autocmd FileType haml setlocal sw=2 sts=2 ts=2 et
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>n :NERDTreeToggle<cr>
-:nnoremap <leader>b :Bookmark<cr>
-:nnoremap <leader>c :ClearAllBookmarks<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>b :Bookmark<cr>
+nnoremap <leader>c :ClearAllBookmarks<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gtags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <C-h> :Gtags -f %
-:nnoremap <C-j> :GtagsCursor<cr>
+nnoremap <C-h> :Gtags -f %
+nnoremap <C-j> :GtagsCursor<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YankRing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>y :YRShow<cr>
+nnoremap <leader>y :YRShow<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MRU
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>m :MRU<cr>
+nnoremap <leader>m :MRU<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>u :GundoToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git - Fugitive and Gitv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>gb :Gblame<cr>
-:nnoremap <leader>gs :Gstatus<cr>
-:nnoremap <leader>gd :Gdiff<cr>
-:nnoremap <leader>gl :Glog<cr>
-:nnoremap <leader>gc :Gcommit -v<cr>
-:nnoremap <leader>gp :Git push<cr>
-:nnoremap <leader>gaa :Git add --all<cr>
-:nnoremap <leader>gv :Gitv<cr>
-:nnoremap <leader>go :Gitv!<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gc :Gcommit -v<cr>
+nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>gaa :Git add --all<cr>
+nnoremap <leader>gv :Gitv<cr>
+nnoremap <leader>go :Gitv!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unite
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>fb :Unite buffer<cr>
-:nnoremap <leader>fr :Unite register<cr>
-:nnoremap <leader>fc :Unite bookmark<cr>
-:nnoremap <leader>fa :UniteBookmarkAdd<cr> 
-:nnoremap <leader>fg :Unite grep<cr> 
+nnoremap <leader>fb :Unite buffer<cr>
+nnoremap <leader>fr :Unite register<cr>
+nnoremap <leader>fc :Unite bookmark<cr>
+nnoremap <leader>fa :UniteBookmarkAdd<cr> 
+nnoremap <leader>fg :Unite grep<cr> 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
@@ -296,7 +303,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
@@ -308,9 +315,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+return neocomplete#close_popup() . "\<CR>"
+" For no inserting <CR> key.
+"return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
