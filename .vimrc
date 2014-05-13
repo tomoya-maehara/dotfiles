@@ -89,7 +89,7 @@ command W w !sudo tee % > /dev/null
 
 " When editing a file, always jump to the last cursor position  
 autocmd BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
-\ exe "normal g`\"" | endif
+  \ exe "normal g`\"" | endif
 
 " Always open the quickfix with vimgrep
 autocmd QuickFixCmdPost vimgrep cw
@@ -103,12 +103,11 @@ set so=7
 " Turn on the Wild menu
 set wildmenu
 
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+" Ignore compiled files set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
-    set wildignore+=.git\*,.hg\*,.svn\*
+  set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
 " Always show line number
