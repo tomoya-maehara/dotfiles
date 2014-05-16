@@ -242,8 +242,8 @@ autocmd FileType vim setlocal sw=2 sts=2 ts=2 et
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>b :Bookmark<cr>
-nnoremap <leader>c :ClearAllBookmarks<cr>
+nnoremap <leader>nb :Bookmark<cr>
+nnoremap <leader>nc :ClearAllBookmarks<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gtags
