@@ -32,6 +32,7 @@ Plugin 'scrooloose/syntastic'
 
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'evidens/vim-twig'
 
 " Perl
 Plugin 'c9s/perlomni.vim'
