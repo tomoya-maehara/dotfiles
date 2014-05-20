@@ -34,6 +34,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'evidens/vim-twig'
 
+" Javascript
+Plugin 'othree/javascript-libraries-syntax.vim'
+
 " Perl
 Plugin 'c9s/perlomni.vim'
 
@@ -373,4 +376,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Javascript Syntax Highlight 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:used_javascript_libs = 'jquery,angularjs,angularui'
 
