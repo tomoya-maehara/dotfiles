@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Programming
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/gtags.vim'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'tpope/vim-surround'
@@ -75,6 +76,7 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -94,9 +96,6 @@ command W w !sudo tee % > /dev/null
 " When editing a file, always jump to the last cursor position  
 autocmd BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
-
-" Always open the quickfix with vimgrep
-autocmd QuickFixCmdPost vimgrep cw
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM user interface
@@ -243,9 +242,20 @@ autocmd FileType haml setlocal sw=2 sts=2 ts=2 et
 autocmd FileType vim setlocal sw=2 sts=2 ts=2 et
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Grep 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use system grep
+set grepprg=grep\ -rnIH\ --exclude-dir=.svn\ --exclude-dir=.git
+autocmd QuickfixCmdPost vimgrep cw
+autocmd QuickfixCmdPost grep cw
+
+nnoremap <expr> <Space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
+nnoremap <expr> <Space>G ':sil grep! ' . expand('<cword>') . ' *'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeTabsToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
 nnoremap <leader>nc :ClearAllBookmarks<cr>
 
