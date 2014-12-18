@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Programming
+Plugin 'vim-scripts/sudo.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/gtags.vim'
@@ -249,8 +250,8 @@ set grepprg=grep\ -rnIH\ --exclude-dir=.svn\ --exclude-dir=.git
 autocmd QuickfixCmdPost vimgrep cw
 autocmd QuickfixCmdPost grep cw
 
-nnoremap <expr> <Space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
-nnoremap <expr> <Space>G ':sil grep! ' . expand('<cword>') . ' *'
+nnoremap <expr> <Space>g ':grep! ' . expand('<cword>') . ' *'
+nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
