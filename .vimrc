@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Programming
 Plugin 'vim-scripts/sudo.vim'
+Plugin 'mkitt/tabline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/gtags.vim'
