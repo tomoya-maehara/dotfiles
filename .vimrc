@@ -78,7 +78,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -186,7 +185,8 @@ catch
 endtry
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
