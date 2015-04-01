@@ -220,6 +220,10 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" Visible tabs
+set list
+set listchars=tab:>-
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command line 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
