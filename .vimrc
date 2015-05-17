@@ -16,7 +16,7 @@ Plugin 'vim-scripts/sudo.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-scripts/gtags.vim'
+Plugin 'szw/vim-tags'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -35,6 +35,7 @@ Plugin 'scrooloose/syntastic'
 
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'vim-scripts/php_localvarcheck.vim'
 Plugin 'evidens/vim-twig'
 
 " Javascript
@@ -180,7 +181,7 @@ endif
 set background=dark
 
 try
-  colorscheme Tomorrow-Night
+  colorscheme hybrid
 catch
 endtry
 
@@ -264,12 +265,6 @@ nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . exp
 nnoremap <leader>n :NERDTreeTabsToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
 nnoremap <leader>nc :ClearAllBookmarks<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Gtags
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-h> :Gtags -f %
-nnoremap <C-j> :GtagsCursor<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YankRing
