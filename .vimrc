@@ -268,8 +268,9 @@ autocmd FileType xml        setlocal sw=4 sts=4 ts=4 et
 autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
+autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
 
-autocmd BufNewFile,BufRead *.twig set filetype=html
+autocmd BufNewFile,BufRead *.twig set filetype=twig
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Grep 
