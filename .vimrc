@@ -270,7 +270,7 @@ autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
 
-autocmd BufNewFile,BufRead *.twig set filetype=twig
+autocmd BufNewFile,BufRead *.twig set filetype=eruby.html
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Grep 
