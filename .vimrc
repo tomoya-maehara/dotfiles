@@ -391,6 +391,9 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
+" Disable scratch preview
+set completeopt-=preview
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neosnippet
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
