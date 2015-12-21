@@ -269,6 +269,7 @@ autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
+autocmd FileType eruby.html setlocal sw=2 sts=2 ts=2 et
 
 autocmd BufNewFile,BufRead *.twig set filetype=eruby.html
 
@@ -390,6 +391,9 @@ if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+" Disable scratch preview
+set completeopt-=preview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neosnippet
