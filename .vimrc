@@ -260,7 +260,7 @@ autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
 autocmd FileType python     setlocal sw=4 sts=4 ts=8 et
 autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
 autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
-autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
+autocmd FileType sql        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
@@ -394,6 +394,9 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 " Disable scratch preview
 set completeopt-=preview
+
+" Disable SQL completion
+let g:loaded_sql_completion = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neosnippet
