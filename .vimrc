@@ -271,7 +271,11 @@ autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType eruby.html setlocal sw=2 sts=2 ts=2 et
 
-autocmd BufNewFile,BufRead *.twig set filetype=eruby.html
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File types
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.twig set ft=eruby.html
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Grep 
@@ -423,4 +427,3 @@ endif
 " Javascript Syntax Highlight 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:used_javascript_libs = 'jquery,angularjs,angularui'
-
