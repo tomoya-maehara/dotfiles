@@ -4,7 +4,7 @@ currentPath=$(cd $(dirname $0) && pwd)
 
 # vim
 ln -s $currentPath/.vimrc $HOME/.vimrc
-if [ $? == 0 ]; then
+if [ $? = 0 ]; then
   vundlePath=$HOME/.vim/bundle/Vundle.vim
   if [ ! -e $vundlePath ]; then
     git clone https://github.com/gmarik/Vundle.vim.git $vundlePath
