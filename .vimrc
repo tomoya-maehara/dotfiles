@@ -29,8 +29,6 @@ Plugin 'gregsexton/gitv'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/syntastic'
 
 " PHP
@@ -335,6 +333,9 @@ nnoremap <leader>fg :Unite grep<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Prevent scratch preview open
+set completeopt-=preview
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -401,27 +402,6 @@ set completeopt-=preview
 
 " Disable SQL completion
 let g:loaded_sql_completion = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neosnippet
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Javascript Syntax Highlight 
