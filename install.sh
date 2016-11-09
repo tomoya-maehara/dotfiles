@@ -20,6 +20,11 @@ ln -s $currentPath/.ctags $HOME/.ctags
 # tmux
 ln -s $currentPath/.tmux.conf $HOME/.tmux.conf
 
+tmuxPluginPath=$HOME/.tmux/plugins/tpm
+if [ ! -e $tmuxPluginPath ]; then
+  git clone https://github.com/tmux-plugins/tpm $tmuxPluginPath
+fi
+
 # bash
 ln -s $currentPath/.bashrc $HOME/.bashrc
 ln -s $currentPath/.bash_profile $HOME/.bash_profile
