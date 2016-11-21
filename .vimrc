@@ -49,6 +49,11 @@ Plugin 'slim-template/vim-slim'
 " Scala
 Plugin 'derekwyatt/vim-scala'
 
+" Python
+Plugin 'davidhalter/jedi-vim'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'jmcantrell/vim-virtualenv'
+
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin '29decibel/codeschool-vim-theme'
@@ -403,6 +408,13 @@ set completeopt-=preview
 " Disable SQL completion
 let g:loaded_sql_completion = 0
 let g:omni_sql_no_default_maps = 1
+
+" Python
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Javascript Syntax Highlight 
