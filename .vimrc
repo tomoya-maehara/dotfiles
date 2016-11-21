@@ -246,6 +246,8 @@ cnoremap <C-h> <C-f>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap bp :bprevious<CR>
 nnoremap bn :bnext<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent 
