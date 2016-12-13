@@ -422,3 +422,15 @@ let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*f
 " Javascript Syntax Highlight 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:used_javascript_libs = 'jquery,angularjs,angularui'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jedi Shortcut
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#goto_command = ""
+let g:jedi#goto_assignments_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = ""
+let g:jedi#usages_command = ""
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = ""
+
