@@ -53,6 +53,10 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'kh3phr3n/python-syntax'
+
+" Java
+Plugin 'npacker/vim-java-syntax-after'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
