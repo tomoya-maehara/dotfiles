@@ -338,9 +338,10 @@ nnoremap <leader>go :Gitv!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>fb :Unite buffer<cr>
 nnoremap <leader>fr :Unite register<cr>
-nnoremap <leader>fc :Unite bookmark<cr>
-nnoremap <leader>fa :UniteBookmarkAdd<cr> 
-nnoremap <leader>fg :Unite grep<cr> 
+nnoremap <leader>fg :Unite grep:.<cr>
+nnoremap <leader>ff :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
+
+let g:unite_enable_auto_select = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
