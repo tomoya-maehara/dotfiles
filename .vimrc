@@ -300,7 +300,8 @@ nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . exp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeTabsToggle<cr>
+nnoremap <leader>n  :NERDTreeTabsToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nb :Bookmark<cr>
 nnoremap <leader>nc :ClearAllBookmarks<cr>
 
