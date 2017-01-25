@@ -298,6 +298,11 @@ nnoremap <expr> <Space>g ':grep! ' . expand('<cword>') . ' *'
 nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim tags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_tags_auto_generate = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>n  :NERDTreeTabsToggle<cr>
