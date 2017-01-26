@@ -30,6 +30,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
@@ -301,6 +303,13 @@ nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . exp
 " vim tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_tags_auto_generate = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_emphasis_multiline = 0
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_new_list_item_indent = 2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
