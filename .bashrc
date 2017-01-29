@@ -14,6 +14,9 @@ export HISTCONTROL=ignoredups:erasedups         # no duplicate entries
 export HISTSIZE=100000                          # big big history (default is 500)
 export HISTFILESIZE=$HISTSIZE                   # big big history
 
+# Alias
+alias ll='ls -lG'
+
 # User specific aliases and functions
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
