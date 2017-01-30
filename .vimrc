@@ -281,12 +281,15 @@ autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType eruby.html setlocal sw=2 sts=2 ts=2 et
+autocmd FileType markdown   setlocal sw=2 sts=2 ts=2 et
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File types
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.twig set ft=eruby.html
 autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead *.dig  set ft=yaml
+autocmd BufNewFile,BufRead *.md   set ft=markdown
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Grep 
