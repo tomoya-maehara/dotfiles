@@ -17,6 +17,12 @@ export HISTFILESIZE=$HISTSIZE                   # big big history
 # Alias
 alias ll='ls -lG'
 
+if [[ -x `which colordiff` ]]; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
+
 # User specific aliases and functions
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
