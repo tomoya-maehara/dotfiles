@@ -46,10 +46,11 @@ Plugin 'c9s/perlomni.vim'
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
-Plugin 'slim-template/vim-slim'
+Plugin 'tpope/vim-liquid'
+"Plugin 'slim-template/vim-slim'
 
 " Scala
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'derekwyatt/vim-scala'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
@@ -59,6 +60,9 @@ Plugin 'kh3phr3n/python-syntax'
 
 " Java
 Plugin 'npacker/vim-java-syntax-after'
+
+" HTML
+Plugin 'othree/html5.vim'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -282,6 +286,7 @@ autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType eruby.html setlocal sw=2 sts=2 ts=2 et
 autocmd FileType markdown   setlocal sw=2 sts=2 ts=2 et
+autocmd FileType liquid     setlocal sw=2 sts=2 ts=2 et
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File types
@@ -290,6 +295,8 @@ autocmd BufNewFile,BufRead *.twig set ft=eruby.html
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.dig  set ft=yaml
 autocmd BufNewFile,BufRead *.md   set ft=markdown
+autocmd BufNewFile,BufRead *.erb  set ft=eruby.html
+autocmd BufNewFile,BufRead *.js.erb set ft=javascript
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Grep 
@@ -321,6 +328,8 @@ nnoremap <leader>n  :NERDTreeTabsToggle<cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nb :Bookmark<cr>
 nnoremap <leader>nc :ClearAllBookmarks<cr>
+
+let NERDTreeIgnore = ['\.pyc$']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YankRing
