@@ -24,5 +24,7 @@ else
 fi
 
 # User specific aliases and functions
+stty stop undef
+
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
