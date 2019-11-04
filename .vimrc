@@ -32,6 +32,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'chrisbra/vim-diff-enhanced'
 
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
@@ -114,6 +115,14 @@ command W w !sudo tee % > /dev/null
 " When editing a file, always jump to the last cursor position  
 autocmd BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
+
+" 'set exrc' in ~/.vimrc will read .vimrc from the current directory
+" Warning: Enabling exrc is dangerous! You can do nearly everything from a
+" vimrc configuration file, including write operations and shell execution.
+" You should consider setting 'set secure' as well, which is highly
+" recommended!
+set exrc
+set secure
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM user interface
@@ -292,7 +301,6 @@ autocmd FileType liquid     setlocal sw=2 sts=2 ts=2 et
 " File types
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.twig set ft=eruby.html
-autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.dig  set ft=yaml
 autocmd BufNewFile,BufRead *.md   set ft=markdown
 autocmd BufNewFile,BufRead *.erb  set ft=eruby.html
@@ -308,6 +316,15 @@ autocmd QuickfixCmdPost grep cw
 
 nnoremap <expr> <Space>g ':grep! ' . expand('<cword>') . ' *'
 nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set fdm=indent
+" Save folding when files are closed
+autocmd BufWinLeave *.* mkview
+" Restore folding when files are open
+autocmd BufWinEnter *.* silent loadview 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim tags
@@ -466,3 +483,13 @@ let g:jedi#usages_command = ""
 let g:jedi#completions_command = ""
 let g:jedi#rename_command = ""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_scss_checkers      = [ 'sass_lint' ]
+let g:syntastic_sass_sass_args     = '-I ' . getcwd()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSON formatter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command Jq %!jq .
