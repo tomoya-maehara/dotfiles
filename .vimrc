@@ -269,11 +269,20 @@ nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set fdm=indent
+" Save folding when files are closed
+autocmd BufWinLeave *.* mkview
+" Restore folding when files are open
+autocmd BufWinEnter *.* silent loadview 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
 autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
-autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
+autocmd FileType css        setlocal sw=2 sts=2 ts=2 et fdm=manual
 autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
 autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
@@ -291,7 +300,7 @@ autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType xml        setlocal sw=4 sts=4 ts=4 et
 autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
-autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
+autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et fdm=manual
 autocmd FileType twig       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType eruby.html setlocal sw=2 sts=2 ts=2 et
 autocmd FileType markdown   setlocal sw=2 sts=2 ts=2 et
@@ -316,15 +325,6 @@ autocmd QuickfixCmdPost grep cw
 
 nnoremap <expr> <Space>g ':grep! ' . expand('<cword>') . ' *'
 nnoremap <expr> <Space>G ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Folding
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set fdm=indent
-" Save folding when files are closed
-autocmd BufWinLeave *.* mkview
-" Restore folding when files are open
-autocmd BufWinEnter *.* silent loadview 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim tags
