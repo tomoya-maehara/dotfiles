@@ -39,7 +39,8 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'evidens/vim-twig'
 
 " Javascript
-Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'yuezk/vim-js'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " Perl
 Plugin 'c9s/perlomni.vim'
