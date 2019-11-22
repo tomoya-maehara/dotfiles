@@ -245,6 +245,7 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+set noci "Disable C lang indent
 
 " Visible tabs
 set list
@@ -281,7 +282,7 @@ autocmd BufWinEnter *.* silent loadview
 " Indent 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
-autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
+autocmd FileType c          setlocal sw=4 sts=4 ts=4 et ci
 autocmd FileType css        setlocal sw=2 sts=2 ts=2 et fdm=manual
 autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
 autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
