@@ -39,6 +39,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'evidens/vim-twig'
 
 " Javascript
+Plugin 'pangloss/vim-javascript'
 Plugin 'yuezk/vim-js'
 Plugin 'maxmellon/vim-jsx-pretty'
 
@@ -246,7 +247,6 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-set noci "Disable C lang indent
 
 " Visible tabs
 set list
